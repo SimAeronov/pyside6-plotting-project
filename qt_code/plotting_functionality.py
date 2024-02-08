@@ -3,7 +3,7 @@ from os import path
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT
 from matplotlib.figure import Figure
 from PySide6.QtWidgets import QSizePolicy, QPushButton, QDialog, QVBoxLayout, QMainWindow
-from PySide6.QtCore import QSize, Signal
+from PySide6.QtCore import QSize, Signal, Qt
 
 from pandas import read_csv
 
@@ -55,12 +55,12 @@ def generate_plot(parent_widget, file_path):
 
         toolbar = CustomNavigationToolbar(canvas=canvas, parent=parent_widget)
 
-        toolbar.view_canvas_button.clicked.connect(lambda: view_canvas_fullscreen(canvas))
-        toolbar.overlay_canvas_button.clicked.connect(lambda: overlay_plot(canvas, parent_widget))
+        toolbar.view_canvas_button.clicked.connect(lambda: view_canvas_fullscreen(parent_widget, canvas))
+        toolbar.overlay_canvas_button.clicked.connect(lambda: overlay_plot(parent_widget, canvas))
         toolbar.delete_canvas_button.clicked.connect(lambda: delete_plot(canvas, toolbar))
         parent_widget.central_widget_vertical_layout.insertWidget(index_of_horizontal_spacer, toolbar)
 
-def overlay_plot(canvas, parent_widget):
+def overlay_plot(parent_widget, canvas):
     file_path = parent_widget.file_path_line_edit.text()
     if file_path:
         dataframe = read_csv(file_path)
@@ -83,35 +83,39 @@ def delete_plot(canvas, toolbar):
 
 
 class FullScreenDialog(QDialog):
-
-    closed = Signal()
-
-    def __init__(self, figure):
+    def __init__(self, parent_app, canvas):
         super().__init__()
         self.setWindowTitle("Full Screen View")
+        self.parent_app = parent_app
         
         # Create a new canvas widget with the shared figure
-        self.canvas = FigureCanvasQTAgg(figure)
+        self.canvas = canvas
+        # self.toolbar_fullscreen = NavigationToolbar2QT(canvas=self.canvas, parent=self)
         
         layout = QVBoxLayout()
+        # layout.addWidget(self.toolbar_fullscreen)
         layout.addWidget(self.canvas)
         self.setLayout(layout)
         self.showFullScreen()
     
-    def closeEvent(self, event):
-        self.closed.emit()
 
-def view_canvas_fullscreen(canvas):
-    fullscreen_dialog = FullScreenDialog(canvas.figure)
-    fullscreen_dialog.closed.connect(lambda: refresh_main_window(canvas=canvas))
+    def hideEvent(self, event):
+        self.canvas.setParent(self.parent_app)
+        super().hideEvent(event)
+        self.close()
+
+
+
+def view_canvas_fullscreen(parent_app, canvas):
+    fullscreen_dialog = FullScreenDialog(parent_app, canvas)
+    fullscreen_dialog.destroyed.connect(lambda: refresh_main_window(parent_app=parent_app, canvas=canvas))
     fullscreen_dialog.exec_()
 
-def refresh_main_window(canvas):
-    parent = canvas.parentWidget()
-    while parent:
-        if isinstance(parent, QMainWindow):
-            return parent
-        parent = parent.parentWidget()
-    current_size = parent.size()
-    new_size = QSize(current_size.width() + 1, current_size.height() + 1)
-    parent.resize(new_size)
+def refresh_main_window(parent_app, canvas):
+    canvas_size = canvas.size()
+    fig = canvas.figure
+    fig.set_size_inches(canvas_size.width() * 1.3 / fig.dpi, canvas_size.height() * 1.24 / fig.dpi)
+    canvas.draw()
+    index_of_horizontal_spacer = parent_app.central_widget_vertical_layout.indexOf(parent_app.plot_horizontal_spacer)
+    parent_app.central_widget_vertical_layout.insertWidget(index_of_horizontal_spacer, canvas)
+
