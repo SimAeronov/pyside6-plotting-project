@@ -52,7 +52,11 @@
       <item>
        <layout class="QHBoxLayout" name="select_file_horizontal_layout" stretch="3,3,3,3,4">
         <item alignment="Qt::AlignTop">
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="file_path_line_edit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item alignment="Qt::AlignTop">
          <widget class="QPushButton" name="browse_file_button">
@@ -95,7 +99,7 @@
     <item>
      <layout class="QHBoxLayout" name="checkbox_horizontal_layout">
       <item>
-       <widget class="QGroupBox" name="plot_type_groupbox">
+       <widget class="QLabel" name="plot_type_label">
         <property name="font">
          <font>
           <family>Arial Black</family>
@@ -103,44 +107,26 @@
           <bold>true</bold>
          </font>
         </property>
-        <property name="styleSheet">
-         <string notr="true"/>
+        <property name="text">
+         <string>Plot Type:</string>
         </property>
-        <property name="inputMethodHints">
-         <set>Qt::ImhNone</set>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="plot_scatter_checkbox">
+        <property name="text">
+         <string>Scatter</string>
         </property>
-        <property name="title">
-         <string/>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="plot_line_checkbox">
+        <property name="text">
+         <string>Line</string>
         </property>
-        <property name="flat">
-         <bool>false</bool>
+        <property name="checked">
+         <bool>true</bool>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="plot_type_label">
-           <property name="text">
-            <string>Plot Type:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="plot_scatter_checkbox">
-           <property name="text">
-            <string>Scatter</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="plot_line_checkbox">
-           <property name="text">
-            <string>Line</string>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
        </widget>
       </item>
       <item>

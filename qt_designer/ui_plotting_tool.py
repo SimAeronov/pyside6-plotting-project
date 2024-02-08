@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QGroupBox, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
-    QVBoxLayout, QWidget)
-import resources_rc_rc
+from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
+    QWidget)
+import qt_designer.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -53,10 +53,11 @@ class Ui_MainWindow(object):
 
         self.select_file_horizontal_layout = QHBoxLayout()
         self.select_file_horizontal_layout.setObjectName(u"select_file_horizontal_layout")
-        self.lineEdit = QLineEdit(self.centralwidget)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.file_path_line_edit = QLineEdit(self.centralwidget)
+        self.file_path_line_edit.setObjectName(u"file_path_line_edit")
+        self.file_path_line_edit.setEnabled(False)
 
-        self.select_file_horizontal_layout.addWidget(self.lineEdit, 0, Qt.AlignTop)
+        self.select_file_horizontal_layout.addWidget(self.file_path_line_edit, 0, Qt.AlignTop)
 
         self.browse_file_button = QPushButton(self.centralwidget)
         self.browse_file_button.setObjectName(u"browse_file_button")
@@ -90,32 +91,22 @@ class Ui_MainWindow(object):
 
         self.checkbox_horizontal_layout = QHBoxLayout()
         self.checkbox_horizontal_layout.setObjectName(u"checkbox_horizontal_layout")
-        self.plot_type_groupbox = QGroupBox(self.centralwidget)
-        self.plot_type_groupbox.setObjectName(u"plot_type_groupbox")
-        self.plot_type_groupbox.setFont(font)
-        self.plot_type_groupbox.setStyleSheet(u"")
-        self.plot_type_groupbox.setInputMethodHints(Qt.ImhNone)
-        self.plot_type_groupbox.setFlat(False)
-        self.horizontalLayout = QHBoxLayout(self.plot_type_groupbox)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.plot_type_label = QLabel(self.plot_type_groupbox)
+        self.plot_type_label = QLabel(self.centralwidget)
         self.plot_type_label.setObjectName(u"plot_type_label")
+        self.plot_type_label.setFont(font)
 
-        self.horizontalLayout.addWidget(self.plot_type_label)
+        self.checkbox_horizontal_layout.addWidget(self.plot_type_label)
 
-        self.plot_scatter_checkbox = QCheckBox(self.plot_type_groupbox)
+        self.plot_scatter_checkbox = QCheckBox(self.centralwidget)
         self.plot_scatter_checkbox.setObjectName(u"plot_scatter_checkbox")
 
-        self.horizontalLayout.addWidget(self.plot_scatter_checkbox)
+        self.checkbox_horizontal_layout.addWidget(self.plot_scatter_checkbox)
 
-        self.plot_line_checkbox = QCheckBox(self.plot_type_groupbox)
+        self.plot_line_checkbox = QCheckBox(self.centralwidget)
         self.plot_line_checkbox.setObjectName(u"plot_line_checkbox")
         self.plot_line_checkbox.setChecked(True)
 
-        self.horizontalLayout.addWidget(self.plot_line_checkbox)
-
-
-        self.checkbox_horizontal_layout.addWidget(self.plot_type_groupbox)
+        self.checkbox_horizontal_layout.addWidget(self.plot_line_checkbox)
 
         self.plot_grid_checkbox = QCheckBox(self.centralwidget)
         self.plot_grid_checkbox.setObjectName(u"plot_grid_checkbox")
@@ -161,7 +152,6 @@ class Ui_MainWindow(object):
         self.browse_file_button.setText(QCoreApplication.translate("MainWindow", u"Browse...", None))
         self.plot_data_button.setText(QCoreApplication.translate("MainWindow", u"Plot Data", None))
         self.integrate_button.setText(QCoreApplication.translate("MainWindow", u"Integrate", None))
-        self.plot_type_groupbox.setTitle("")
         self.plot_type_label.setText(QCoreApplication.translate("MainWindow", u"Plot Type:", None))
         self.plot_scatter_checkbox.setText(QCoreApplication.translate("MainWindow", u"Scatter", None))
         self.plot_line_checkbox.setText(QCoreApplication.translate("MainWindow", u"Line", None))
