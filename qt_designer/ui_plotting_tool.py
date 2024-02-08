@@ -31,8 +31,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.central_widget_vertical_layout = QVBoxLayout(self.centralwidget)
+        self.central_widget_vertical_layout.setObjectName(u"central_widget_vertical_layout")
         self.main_vertical_layout = QVBoxLayout()
         self.main_vertical_layout.setObjectName(u"main_vertical_layout")
         self.welcome_label = QLabel(self.centralwidget)
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         self.main_vertical_layout.addLayout(self.select_file_horizontal_layout)
 
 
-        self.verticalLayout_2.addLayout(self.main_vertical_layout)
+        self.central_widget_vertical_layout.addLayout(self.main_vertical_layout)
 
         self.checkbox_horizontal_layout = QHBoxLayout()
         self.checkbox_horizontal_layout.setObjectName(u"checkbox_horizontal_layout")
@@ -119,17 +119,17 @@ class Ui_MainWindow(object):
         self.checkbox_horizontal_layout.addItem(self.horizontalSpacer_2)
 
 
-        self.verticalLayout_2.addLayout(self.checkbox_horizontal_layout)
+        self.central_widget_vertical_layout.addLayout(self.checkbox_horizontal_layout)
 
         self.plot_horizontal_spacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_2.addItem(self.plot_horizontal_spacer)
+        self.central_widget_vertical_layout.addItem(self.plot_horizontal_spacer)
 
         self.integration_label = QLabel(self.centralwidget)
         self.integration_label.setObjectName(u"integration_label")
         self.integration_label.setFont(font)
 
-        self.verticalLayout_2.addWidget(self.integration_label)
+        self.central_widget_vertical_layout.addWidget(self.integration_label)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)

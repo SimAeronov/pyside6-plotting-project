@@ -18,7 +18,7 @@
     <normaloff>:/resources/images/redbird_ico.ico</normaloff>:/resources/images/redbird_ico.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="central_widget_vertical_layout">
     <item>
      <layout class="QVBoxLayout" name="main_vertical_layout">
       <item>

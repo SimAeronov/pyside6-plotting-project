@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QMainWindow, QButtonGroup, QGroupBox, QHBoxLayout
 
 from qt_designer.ui_plotting_tool import Ui_MainWindow
 
-from qt_code.buttons_functionality import browse_file_button_clicked
+from qt_code.buttons_functionality import browse_file_button_clicked, plot_data_button_clicked
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent_app) -> None:
@@ -22,13 +22,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_group.addButton(self.plot_line_checkbox)
 
         self.browse_file_button.clicked.connect(self.browse_file_button_clicked)
+        self.plot_data_button.clicked.connect(self.plot_data_button_clicked)
 
     
     def browse_file_button_clicked(self):
         browse_file_button_clicked(parent_widget=self)
 
     def plot_data_button_clicked(self):
-        pass
+        plot_data_button_clicked(parent_widget=self)
 
     def integrate_button_clicked(self):
         pass
