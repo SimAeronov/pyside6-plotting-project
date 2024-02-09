@@ -1,15 +1,19 @@
 from os import path
+from math import sqrt
+
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT
 from matplotlib.figure import Figure
 from PySide6.QtWidgets import QSizePolicy, QPushButton, QDialog, QVBoxLayout, QMainWindow
-from PySide6.QtCore import QSize, Signal, Qt
+from PySide6.QtCore import QTimer, QSize, Signal, Qt
 
 from pandas import read_csv
 
 class CustomNavigationToolbar(NavigationToolbar2QT):
-    def __init__(self, canvas, parent=None, coordinates=True):
+    def __init__(self, canvas, parent=None, coordinates=True, current_index=0):
         super().__init__(canvas, parent, coordinates)
+
+        self.current_index = current_index
 
         self.view_canvas_button = QPushButton("View")
         self.overlay_canvas_button = QPushButton("Add Overlay Plot")
@@ -23,7 +27,22 @@ class CustomNavigationToolbar(NavigationToolbar2QT):
         self.addWidget(self.overlay_canvas_button)
         self.addWidget(self.delete_canvas_button)
 
+
+def count_figure_canvases(parent_app):
+    count = 0
+    for index_of_widget in range(parent_app.central_widget_vertical_layout.count()):
+        widget = parent_app.central_widget_vertical_layout.itemAt(index_of_widget).widget()
+        if isinstance(widget, FigureCanvasQTAgg):
+            count += 1
+    return count
+
 def generate_plot(parent_widget, file_path):
+
+    if count_figure_canvases(parent_app=parent_widget) >= 2:
+        parent_widget.statusBar().setStyleSheet("color: red")
+        parent_widget.statusBar().showMessage("Cannot generate plot: Maximum number of plots reached.")
+        QTimer.singleShot(5000, lambda: parent_widget.statusBar().clearMessage())
+        return
 
     if file_path:
         dataframe = read_csv(file_path)
@@ -53,9 +72,9 @@ def generate_plot(parent_widget, file_path):
         index_of_horizontal_spacer = parent_widget.central_widget_vertical_layout.indexOf(parent_widget.plot_horizontal_spacer)
         parent_widget.central_widget_vertical_layout.insertWidget(index_of_horizontal_spacer, canvas)
 
-        toolbar = CustomNavigationToolbar(canvas=canvas, parent=parent_widget)
+        toolbar = CustomNavigationToolbar(canvas=canvas, parent=parent_widget, current_index=index_of_horizontal_spacer)
 
-        toolbar.view_canvas_button.clicked.connect(lambda: view_canvas_fullscreen(parent_widget, canvas))
+        toolbar.view_canvas_button.clicked.connect(lambda: view_canvas_fullscreen(parent_widget, canvas, canvas_loc_index=index_of_horizontal_spacer))
         toolbar.overlay_canvas_button.clicked.connect(lambda: overlay_plot(parent_widget, canvas))
         toolbar.delete_canvas_button.clicked.connect(lambda: delete_plot(canvas, toolbar))
         parent_widget.central_widget_vertical_layout.insertWidget(index_of_horizontal_spacer, toolbar)
@@ -106,16 +125,34 @@ class FullScreenDialog(QDialog):
 
 
 
-def view_canvas_fullscreen(parent_app, canvas):
+def view_canvas_fullscreen(parent_app, canvas, canvas_loc_index):
     fullscreen_dialog = FullScreenDialog(parent_app, canvas)
-    fullscreen_dialog.destroyed.connect(lambda: refresh_main_window(parent_app=parent_app, canvas=canvas))
+    fullscreen_dialog.destroyed.connect(lambda: refresh_main_window(parent_app=parent_app, canvas=canvas, canvas_loc_index=canvas_loc_index))
     fullscreen_dialog.exec_()
 
-def refresh_main_window(parent_app, canvas):
+def refresh_main_window(parent_app, canvas, canvas_loc_index):
     canvas_size = canvas.size()
     fig = canvas.figure
     fig.set_size_inches(canvas_size.width() * 1.3 / fig.dpi, canvas_size.height() * 1.24 / fig.dpi)
     canvas.draw()
-    index_of_horizontal_spacer = parent_app.central_widget_vertical_layout.indexOf(parent_app.plot_horizontal_spacer)
-    parent_app.central_widget_vertical_layout.insertWidget(index_of_horizontal_spacer, canvas)
+    canvas_loc_index = calculate_canvas_location(parent_app=parent_app, canvas_loc_index=canvas_loc_index)
+    parent_app.central_widget_vertical_layout.insertWidget(canvas_loc_index, canvas)
 
+def refresh_all_canvases(parent_app):
+    for index_of_widget in range(parent_app.central_widget_vertical_layout.count()):
+        widget = parent_app.central_widget_vertical_layout.itemAt(index_of_widget).widget()
+        if isinstance(widget, FigureCanvasQTAgg):
+            refresh_main_window(parent_app, widget)
+
+def calculate_canvas_location(parent_app, canvas_loc_index):
+    for index_of_widget in range(parent_app.central_widget_vertical_layout.count()):
+        widget = parent_app.central_widget_vertical_layout.itemAt(index_of_widget).widget()
+        if isinstance(widget, CustomNavigationToolbar):
+            if widget.current_index == canvas_loc_index:
+                return index_of_widget + 1
+
+
+    # number_of_widgets = parent_app.central_widget_vertical_layout.count()
+    # if (canvas_loc_index := number_of_widgets - canvas_loc_index) < 0:
+    #     canvas_loc_index = sqrt(canvas_loc_index ** 2)
+    # return canvas_loc_index + 1
