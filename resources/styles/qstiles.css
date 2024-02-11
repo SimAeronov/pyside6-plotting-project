@@ -1,0 +1,56 @@
+QMainWindow {
+    background-color: #4d4949;
+}
+
+QPushButton {
+    padding: 2px;
+    margin: 5px;
+    background-color: #bc0a04;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    font-size: 30%;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    padding: 2px;
+    margin: 5px;
+    background-color: #d20b05;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    font-family: "Arial Black";
+    font-size: 30%;
+    font-weight: bold;
+}
+
+QCheckBox {
+    padding: 2px;
+    margin: 5px;
+    font-family: "Arial Black";
+    font-size: 30%;
+    font-weight: bold;
+}
+
+QCheckBox:checked {
+    color:#d20b05
+}
+
+#welcome_label {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#file_path_line_edit {
+    height: 18%;
+    margin: 5px;
+    padding: 2px;
+    background-color: #383838;
+    border: 1px solid #f40b0b;
+    color: #ffffff;
+    font-family: "Arial";
+    
+}

@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>611</width>
+    <width>650</width>
     <height>525</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>600</width>
+    <width>650</width>
     <height>500</height>
    </size>
   </property>
@@ -28,18 +28,41 @@
     <item>
      <layout class="QVBoxLayout" name="main_vertical_layout">
       <item>
-       <widget class="QLabel" name="welcome_label">
-        <property name="font">
-         <font>
-          <family>Arial Black</family>
-          <pointsize>10</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Welcome to Simo Plotting Tool</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="welcome_label_horizontal_layout">
+        <item>
+         <widget class="QLabel" name="welcome_label">
+          <property name="font">
+           <font>
+            <family>Arial Black</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Welcome to Simo Plotting Tool</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="logo_label">
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources_rc.qrc">:/resources/images/Sauber-Group-Logo.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item alignment="Qt::AlignTop">
        <widget class="QLabel" name="info_label">
@@ -198,7 +221,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>611</width>
+     <width>650</width>
      <height>22</height>
     </rect>
    </property>

@@ -7,6 +7,7 @@ from PySide6.QtWidgets import (
     QPushButton,
     QDialog,
     QVBoxLayout,
+    QLabel,
 )
 from PySide6.QtCore import QTimer
 
@@ -23,9 +24,10 @@ class CustomNavigationToolbar(NavigationToolbar2QT):
         self.overlay_canvas_button = QPushButton("Add Overlay Plot")
         self.delete_canvas_button = QPushButton("Delete")
 
-        self.view_canvas_button.setStyleSheet("margin: 5px; padding: 5px;")
-        self.overlay_canvas_button.setStyleSheet("padding: 5px;")
-        self.delete_canvas_button.setStyleSheet("padding: 5px;")
+        self.view_canvas_button.setStyleSheet("background-color: #898888; padding: 5px;")
+        self.overlay_canvas_button.setStyleSheet("background-color: #898888; padding: 5px;")
+        self.delete_canvas_button.setStyleSheet("background-color: #898888; padding: 5px;")
+
 
         self.addWidget(self.view_canvas_button)
         self.addWidget(self.overlay_canvas_button)
@@ -61,7 +63,11 @@ def generate_plot(parent_widget, file_path):
         figure = Figure()
 
         # Set color and set title = file name without extension
-        figure.patch.set_facecolor("#918e8e")
+        figure.patch.set_facecolor("#7A7A7A")
+        
+        figure.patch.set_edgecolor("red")  # Add border color
+        figure.patch.set_linewidth(3)  # Add border width
+
         figure.suptitle(path.splitext(path.basename(file_path))[0])
         axis = figure.add_subplot()
         if parent_widget.plot_scatter_checkbox.isChecked():

@@ -8,15 +8,13 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+from PySide6.QtCore import (QCoreApplication,
+    QMetaObject, QRect,
+    QSize, Qt)
+from PySide6.QtGui import (
+    QFont, QIcon, QPixmap)
+from PySide6.QtWidgets import (QCheckBox, QHBoxLayout, QLabel,
+    QLineEdit, QMenuBar, QPushButton,
     QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
     QWidget)
 import qt_designer.resources_rc
@@ -25,8 +23,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(611, 525)
-        MainWindow.setMinimumSize(QSize(600, 500))
+        MainWindow.resize(650, 525)
+        MainWindow.setMinimumSize(QSize(650, 500))
         icon = QIcon()
         icon.addFile(u":/resources/images/redbird_ico.ico", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -36,6 +34,8 @@ class Ui_MainWindow(object):
         self.central_widget_vertical_layout.setObjectName(u"central_widget_vertical_layout")
         self.main_vertical_layout = QVBoxLayout()
         self.main_vertical_layout.setObjectName(u"main_vertical_layout")
+        self.welcome_label_horizontal_layout = QHBoxLayout()
+        self.welcome_label_horizontal_layout.setObjectName(u"welcome_label_horizontal_layout")
         self.welcome_label = QLabel(self.centralwidget)
         self.welcome_label.setObjectName(u"welcome_label")
         font = QFont()
@@ -44,7 +44,18 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.welcome_label.setFont(font)
 
-        self.main_vertical_layout.addWidget(self.welcome_label)
+        self.welcome_label_horizontal_layout.addWidget(self.welcome_label)
+
+        self.logo_label = QLabel(self.centralwidget)
+        self.logo_label.setObjectName(u"logo_label")
+        self.logo_label.setMaximumSize(QSize(60, 60))
+        self.logo_label.setPixmap(QPixmap(u":/resources/images/Sauber-Group-Logo.png"))
+        self.logo_label.setScaledContents(True)
+
+        self.welcome_label_horizontal_layout.addWidget(self.logo_label)
+
+
+        self.main_vertical_layout.addLayout(self.welcome_label_horizontal_layout)
 
         self.info_label = QLabel(self.centralwidget)
         self.info_label.setObjectName(u"info_label")
@@ -135,7 +146,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 611, 22))
+        self.menubar.setGeometry(QRect(0, 0, 650, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -149,6 +160,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"S-PlottingTool", None))
         self.welcome_label.setText(QCoreApplication.translate("MainWindow", u"Welcome to Simo Plotting Tool", None))
+        self.logo_label.setText("")
         self.info_label.setText(QCoreApplication.translate("MainWindow", u"Please select path to .CSV file, containing X,Y data.", None))
         self.browse_file_button.setText(QCoreApplication.translate("MainWindow", u"Browse...", None))
         self.plot_data_button.setText(QCoreApplication.translate("MainWindow", u"Plot Data", None))
