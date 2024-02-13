@@ -5,7 +5,7 @@
 Runs with Python3.12 but for build use: 'py -3.10 -m venv .venv'
 
 **Custom C library builds with:**
-x86_64-13.2.0-release-posix-seh-ucrt-rt_v11-rev0.7z
+[x86_64-13.2.0-release-posix-seh-ucrt-rt_v11-rev0.7z](https://github.com/niXman/mingw-builds-binaries/releases)
 
 **Build/Install custom library**
 inside c_libraries\ use: 'python.exe .\setup.py install'
