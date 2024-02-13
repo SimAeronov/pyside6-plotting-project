@@ -1,5 +1,6 @@
 from distutils.core import setup, Extension
 def main():
+    # Uncomment to debug: run with -v > output.txt 2>&1
     # os.environ['DISTUTILS_DEBUG'] = '1'
     
     module = Extension("custom_math", sources=["custom_math.c"])

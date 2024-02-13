@@ -16,8 +16,10 @@ inside c_libraries\ use: 'python.exe .\setup.py install'
 
 **custom_math c library**:<br>
 ```python
+import custom_math
 custom_math.simpsons_rule(x:List[float], y:List[float]) -> float
 ```
 
-
+## Future work:
+1. Fix issue with .csv not having headers
 
