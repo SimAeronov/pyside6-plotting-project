@@ -20,6 +20,11 @@ import custom_math
 custom_math.simpsons_rule(x:List[float], y:List[float]) -> float
 ```
 
+## Building executable:
+1. `pip install dev_requirements.txt`
+2. `nuitka.bat --standalone --disable-console --plugin-enable=pyside6 --include-data-dir=resources=resources --include-data-dir=csv_data=csv_data .\main.py`
+3. `main.dist/main.exe`
+
 ## Future work:
 1. Fix issue with .csv not having headers
 
