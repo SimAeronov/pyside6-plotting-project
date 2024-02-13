@@ -38,4 +38,8 @@ custom_math.simpsons_rule(x:List[float], y:List[float]) -> float
 
 ## Future work:
 1. Fix issue with .csv not having headers
+2. Fix plot buttons size/font
+3. Add better status bar to handle user errors
+4. Check Pyside QSS hex color issue 
+5. Add .exe icon
 
