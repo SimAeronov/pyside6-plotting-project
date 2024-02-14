@@ -20,12 +20,12 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\SimoPlottingTool
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\LICENSE
+LicenseFile=C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\LICENSE
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\setup
+OutputDir=C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\setup
 OutputBaseFilename=SimoPlottingTool_setup
-SetupIconFile=C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\resources\images\redbird_ico.ico
+SetupIconFile=C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\resources\images\redbird_ico.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -37,56 +37,56 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\contourpy\*"; DestDir: "{app}/contourpy"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\csv_data\*"; DestDir: "{app}/csv_data"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\custom_math\*"; DestDir: "{app}/custom_math"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\kiwisolver\*"; DestDir: "{app}/kiwisolver"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\matplotlib\*"; DestDir: "{app}/matplotlib"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\matplotlib.libs\*"; DestDir: "{app}/matplotlib.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\numpy\*"; DestDir: "{app}/numpy"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\numpy.libs\*"; DestDir: "{app}/numpy.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pandas\*"; DestDir: "{app}/pandas"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pandas.libs\*"; DestDir: "{app}/pandas.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\PIL\*"; DestDir: "{app}/PIL"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\PySide6\*"; DestDir: "{app}/PySide6"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pytz\*"; DestDir: "{app}/pytz"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\resources\*"; DestDir: "{app}/resources"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\shiboken6\*"; DestDir: "{app}/shiboken6"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_bz2.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_ctypes.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_decimal.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_elementtree.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_hashlib.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_lzma.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_multiprocessing.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_queue.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_socket.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_sqlite3.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_ssl.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_uuid.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libcrypto-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libffi-7.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libssl-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140_1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140_2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pyexpat.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pyside6.abi3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\python3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\python310.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6gui.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6network.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6pdf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6svg.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\select.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\shiboken6.abi3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\sqlite3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\unicodedata.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\vcruntime140.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Brock\Desktop\PythonProjects\pyside6-plotting-project\main.dist\vcruntime140_1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\contourpy\*"; DestDir: "{app}/contourpy"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\csv_data\*"; DestDir: "{app}/csv_data"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\custom_math\*"; DestDir: "{app}/custom_math"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\kiwisolver\*"; DestDir: "{app}/kiwisolver"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\matplotlib\*"; DestDir: "{app}/matplotlib"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\matplotlib.libs\*"; DestDir: "{app}/matplotlib.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\numpy\*"; DestDir: "{app}/numpy"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\numpy.libs\*"; DestDir: "{app}/numpy.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pandas\*"; DestDir: "{app}/pandas"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pandas.libs\*"; DestDir: "{app}/pandas.libs"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\PIL\*"; DestDir: "{app}/PIL"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\PySide6\*"; DestDir: "{app}/PySide6"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pytz\*"; DestDir: "{app}/pytz"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\resources\*"; DestDir: "{app}/resources"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\shiboken6\*"; DestDir: "{app}/shiboken6"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_bz2.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_ctypes.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_decimal.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_elementtree.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_hashlib.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_lzma.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_multiprocessing.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_queue.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_socket.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_sqlite3.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_ssl.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\_uuid.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libcrypto-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libffi-7.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\libssl-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140_1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\msvcp140_2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pyexpat.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\pyside6.abi3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\python3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\python310.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6network.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6pdf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6svg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\qt6widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\select.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\shiboken6.abi3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\sqlite3.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\unicodedata.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\vcruntime140.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\...\Desktop\PythonProjects\pyside6-plotting-project\main.dist\vcruntime140_1.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
